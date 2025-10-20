@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    }
+  ],
+  "connections": [],
+  "serialMonitor": {
+    "display": "auto",
+    "newline": "lf",
+    "convertEol": false
+  }
+}
