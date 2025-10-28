@@ -3,7 +3,7 @@
 #include "ButtonImpl.h"
 
 #define LED_PIN 13
-#define BUTTON_PIN 2 
+#define BUTTON_PIN 8
 
 Light* led;
 Button* button;
@@ -17,7 +17,7 @@ void setup(){
   button = new ButtonImpl(BUTTON_PIN);
   state = OFF;
   Serial.println("READY");
-  timer.setupPeriod(50);
+  timer.setupPeriod(500);
 }
 
 void step(){
