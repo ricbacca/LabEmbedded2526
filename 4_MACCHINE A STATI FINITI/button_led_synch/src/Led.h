@@ -1,15 +1,8 @@
 #ifndef __LED__
 #define __LED__
 
-#include "Light.h"
+void switchOn();
 
-class Led: public Light { 
-public:
-  Led(int pin);
-  void switchOn();
-  void switchOff();    
-private:
-  int pin;  
-};
+void switchOff();    
 
 #endif

@@ -6,7 +6,8 @@ Led led(LED_PIN);
 
 void setup(){
   led.switchOff();
-  Serial.begin(9600); 
+  Serial.begin(115200);
+  Serial.println("READY");
 }
 
 void loop()

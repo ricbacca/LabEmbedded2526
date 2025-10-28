@@ -6,14 +6,14 @@
 #define LED_PIN 13   
 
 boolean ledState;
-boolean buttonStatePressed;
+boolean lastButtonState;
 
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);      
   pinMode(BUTTON_PIN, INPUT);     
   ledState = false;
-  buttonStatePressed = false;
+  lastButtonState = false;
   digitalWrite(LED_PIN,LOW);
   Serial.begin(9600);
 }
@@ -23,9 +23,9 @@ void loop() {
   // debouncing
   delay(5);
   
-  if (!buttonStatePressed) {
-    if (buttonPressed){
-      buttonStatePressed = true;
+  if (lastButtonState == false) {
+    if (buttonPressed == true){
+      lastButtonState = true;
       if (ledState){
         digitalWrite(LED_PIN, LOW);  
         ledState = false;
@@ -37,8 +37,11 @@ void loop() {
       }
     }
   } else {
-    if (!buttonPressed){
-      buttonStatePressed = false;         
+    // lastButtonState = true
+    // se il pulsante non è premuto "libero" il main loop per una
+    // successiva pressione del pulsante che cambi lo stato
+    if (buttonPressed == false){
+      lastButtonState = false;         
     }
   }
 }

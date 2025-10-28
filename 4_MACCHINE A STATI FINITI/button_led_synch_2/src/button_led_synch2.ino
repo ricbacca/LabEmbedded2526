@@ -1,5 +1,4 @@
 #include "Led.h"
-#include "Timer.h"
 #include "ButtonImpl.h"
 
 #define LED_PIN 13
@@ -7,7 +6,6 @@
 
 Light* led;
 Button* button;
-Timer timer;
 
 enum { ON, OFF} state;
 
@@ -16,7 +14,6 @@ void setup(){
   led = new Led(LED_PIN); 
   button = new ButtonImpl(BUTTON_PIN);
   state = OFF;
-  timer.setupPeriod(500);
 }
 
 void step(){
@@ -40,6 +37,6 @@ void step(){
 }
 
 void loop(){
-  timer.waitForNextTick();
   step();
+  delay(500);
 };

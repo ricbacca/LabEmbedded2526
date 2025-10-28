@@ -1,15 +1,34 @@
 {
   "version": 1,
-  "author": "Uri Shaked",
+  "author": "Anonymous maker",
   "editor": "wokwi",
   "parts": [
-    { "type": "wokwi-arduino-uno", "id": "uno", "top": 48.6, "left": -10.2, "attrs": {} },
-    { "type": "wokwi-potentiometer", "id": "pot1", "top": 305.9, "left": 143.8, "attrs": {} }
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -144.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -109.2,
+      "left": 32.6,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 248.3, "left": -9.8, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -89.8,
+      "left": 86.4,
+      "attrs": { "color": "green", "xray": "1" }
+    }
   ],
   "connections": [
-    [ "pot1:SIG", "uno:A0", "green", [ "v28.8", "h57.2", "v-163.1" ] ],
-    [ "pot1:VCC", "uno:5V", "red", [ "v19.2", "h37.6", "v-144", "h-80.6" ] ],
-    [ "pot1:GND", "uno:GND.2", "black", [ "v19.2", "h-57.6", "v-153.5" ] ]
+    [ "led1:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "uno:5", "green", [ "v0" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "v0" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "v0" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "btn1:1.l", "uno:5V", "#8f4814", [ "h0" ] ],
+    [ "btn1:2.r", "uno:2", "green", [ "h0" ] ],
+    [ "uno:2", "uno:GND.3", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }

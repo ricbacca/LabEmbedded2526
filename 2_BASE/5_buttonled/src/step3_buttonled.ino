@@ -1,7 +1,8 @@
-/* #define BUTTON_PIN 7 
+#define BUTTON_PIN 7 
 #define LED_PIN 13  
 
-//bool buttonState = false;
+bool ledState = false;
+bool lastButtonState = false;
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);      
@@ -12,15 +13,18 @@ void setup() {
 void loop() {
   int buttonState = digitalRead(BUTTON_PIN);
 
+  delay(10);
+
   if (buttonState == HIGH) {     
     digitalWrite(LED_PIN, HIGH);  
-    //Serial.println("Pressed");
+    ledState = true;
   } else {
     digitalWrite(LED_PIN, LOW); 
+    ledState = false;
   }
 }
- */
 
+/*
 #define BUTTON_PIN 7 
 #define LED_PIN 13  
 
@@ -46,4 +50,4 @@ void loop() {
   }
   
   delay(15);
-}
+}*/

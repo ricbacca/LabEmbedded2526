@@ -5,6 +5,7 @@
 boolean flagState = false;
 
 void blinky(){
+  Serial.println("BLINK");
   if (!flagState){
     digitalWrite(LED_PIN, HIGH);  
   } else {
@@ -17,6 +18,7 @@ void blinky(){
 void setup()
 {
   pinMode(LED_PIN,OUTPUT);
+  // nanosecondi: 1 secondo = 1.000.000 uSec
   /* set period timer 1000000 usec = 1 sec */
   Timer1.initialize(1000000); 
   Timer1.attachInterrupt(blinky); 

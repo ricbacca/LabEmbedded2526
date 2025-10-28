@@ -16,6 +16,7 @@ void blinky(){
 }
 
 
+
 void setup()
 {
   pinMode(LED_PIN,OUTPUT);
@@ -24,15 +25,20 @@ void setup()
   period = 1000000l;
   Timer1.attachInterrupt(blinky, period); 
   Serial.begin(9600);
+  Serial.println("Inserisci il timer: ");
 }
 
 void loop(){
-  // Serial.println(flagState);
-  int val = analogRead(POT_PIN);
+  if (Serial.available() > 0) {
+    val = Serial.parseInt();
+  }
+
   unsigned long newPeriod = 1000l * val;
+
   if (newPeriod == 0) {
     newPeriod = 100;
   }
+  
   if (newPeriod != period){
     period = newPeriod;
     Timer1.setPeriod(period);
