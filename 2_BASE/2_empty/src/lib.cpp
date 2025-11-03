@@ -1,5 +1,5 @@
 #include "lib.h"
-#include <arduino.h>
+#include "Arduino.h"
 
 /* public */
 int publicFlag;

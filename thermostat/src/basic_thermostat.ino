@@ -1,6 +1,9 @@
 #include "Arduino.h"
+#include "Timer.h"
 
 #define TEMP_PIN A0
+
+extern bool timerFlag;
 
 float setPoint;
 float current;
@@ -8,6 +11,8 @@ const float BETA = 3950;
 
 enum States{STANDBY, HEATING};
 States currentState;
+
+
 
 void setup(){
     Serial.begin(115200);
