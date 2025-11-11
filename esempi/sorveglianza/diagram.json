@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Riccardo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": 32.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -24.4,
+      "left": -105.4,
+      "rotate": 180,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -180.9, "left": 82.3, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 23.2, "left": 328.62, "attrs": {} }
+  ],
+  "connections": [
+    [ "pir1:VCC", "uno:5V", "red", [ "v134.4", "h-204.8" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v144", "h-214.76" ] ],
+    [ "pir1:OUT", "uno:2", "green", [ "v-144", "h-138.04" ] ],
+    [ "ultrasonic1:ECHO", "uno:7", "green", [ "h18.4", "v95.4" ] ],
+    [ "ultrasonic1:TRIG", "uno:8", "green", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "ultrasonic1:GND", "uno:GND.3", "black", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "uno:4", "green", [ "v0" ] ],
+    [ "btn1:1.l", "uno:12", "green", [ "v96", "h172.9" ] ],
+    [ "uno:12", "uno:GND.2", "black", [ "v0" ] ],
+    [ "btn1:2.r", "uno:5V", "red", [ "h-29", "v200.9" ] ]
+  ],
+  "dependencies": {}
+}
