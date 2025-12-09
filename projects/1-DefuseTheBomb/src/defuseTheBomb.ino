@@ -9,7 +9,6 @@ void setup() {
 
 void loop() {
   switch (state) {
-
     case WAIT_START:
       waitStart();
       break;
